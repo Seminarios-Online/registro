@@ -6,8 +6,8 @@
     <title>Seminarios Online</title>
     <link rel="icon" href="logoSO.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales */
         body {
@@ -65,114 +65,114 @@
             width: 250px;
         }
 
-        .box-logo{
-             display: flex;
+        .box-logo {
+            display: flex;
             align-items: center;
             justify-content: center;
         }
 
-       .principal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    background-image: url('bg1.jpg'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajustar la imagen al tamaño de la sección */
-    background-repeat: no-repeat; /* Evitar que la imagen se repita */
-    background-position: center center; /* Centrar la imagen horizontal y verticalmente */
-    color: #fff; /* Cambiar el color del texto para que sea legible en el fondo */
-        height: 100vh;
-}
+        .principal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-image: url('bg1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: #fff;
+            height: 100vh;
+        }
 
         /* Estilos para el div gancho */
-.gancho {
-    text-align: center;
-    padding: 20px;
-}
+        .gancho {
+            text-align: center;
+            padding: 20px;
+        }
 
-.gancho h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
+        .gancho h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
 
-.gancho h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
+        .gancho h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
 
-.gancho h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
+        .gancho h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
 
-/* Estilos para el botón llamativo */
-.boton-llamativo {
-    background-color: #FF5722;
-    color: #fff;
-    font-size: 24px;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+        /* Estilos para el botón llamativo */
+        .boton-llamativo {
+            background-color: #FF5722;
+            color: #fff;
+            font-size: 24px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-.boton-llamativo:hover {
-    background-color: #E64A19;
-}
+        .boton-llamativo:hover {
+            background-color: #E64A19;
+        }
 
-        .gancho .resaltar{
-                color: orange;
-                text-align: underline;
+        .gancho .resaltar {
+            color: orange;
+            text-align: underline;
         }
 
         .resaltar2 {
-                color: #96C100;
+            color: #96C100;
         }
 
-.registro{
-    width: 90%;
-    margin: auto;
-}
-
+        .registro {
+            width: 90%;
+            margin: auto;
+            display: none; /* Inicialmente oculto */
+        }
     </style>
 </head>
 <body>
     <section class="principal">
         <div class="box-principal">
             <div class="box-logo">
-                 <img src="logoSO.png" class="logo">
+                <img src="logoSO.png" class="logo">
             </div>
             <div class="gancho">
                 <h1>El programa de Afiliación que te enseña el <span class="resaltar">  paso a paso para ganar dinero</span> con Hotmart</h1>
                 <h2>Sólo para emprendedores que buscan ganar <span class="resaltar2"> 2000$ - 3000$ extra al mes</span> 😃</h2>
                 <h3>Regístrate y recibe nuestra metodología por email</h3>
-                <button class="boton-llamativo">Comenzar Ahora</button>
+                <button class="boton-llamativo" onclick="mostrarFormulario()">Comenzar Ahora</button>
             </div>
-           <div class="registro">
-             <h2>Responde a las siguientes preguntas</h2>
-            <div class="preguntas">
-                <h3>¿Ya has emprendido alguna vez?</h3>
-                <label for="emprendido">Selecciona una opción:</label>
-                <select id="emprendido" name="emprendido" onchange="mostrarPregunta()">
-                    <option value="seleccionar">Selecciona una opción</option>
-                    <option value="si">Sí</option>
-                    <option value="no">Aún no</option>
-                </select>
-
-                <div id="pregunta2" style="display: none;">
-                    <h3>¿Has generado ya dinero por internet?</h3>
-                    <label for="dineroInternet">Selecciona una opción:</label>
-                    <select id="dineroInternet" name="dineroInternet">
-                        <option value="nada">Aun nada amigo</option>
-                        <option value="poco">Sí, un poco pero ya nada</option>
-                        <option value="1000">Sí, + de 1000$</option>
-                        <option value="2000">Sí, + de 2000$</option>
-                        <option value="5000">Sí, + de 5000$</option>
+            <div class="registro">
+                <h2>Responde a las siguientes preguntas</h2>
+                <div class="preguntas">
+                    <h3>¿Ya has emprendido alguna vez?</h3>
+                    <label for="emprendido">Selecciona una opción:</label>
+                    <select id="emprendido" name="emprendido" onchange="mostrarPregunta()">
+                        <option value="seleccionar">Selecciona una opción</option>
+                        <option value="si">Sí</option>
+                        <option value="no">Aún no</option>
                     </select>
+
+                    <div id="pregunta2" style="display: none;">
+                        <h3>¿Has generado ya dinero por internet?</h3>
+                        <label for="dineroInternet">Selecciona una opción:</label>
+                        <select id="dineroInternet" name="dineroInternet">
+                            <option value="nada">Aun nada amigo</option>
+                            <option value="poco">Sí, un poco pero ya nada</option>
+                            <option value="1000">Sí, + de 1000$</option>
+                            <option value="2000">Sí, + de 2000$</option>
+                            <option value="5000">Sí, + de 5000$</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -182,6 +182,13 @@
             pregunta2.style.display = "block";
         }
 
+        function mostrarFormulario() {
+            const gancho = document.querySelector(".gancho");
+            const registro = document.querySelector(".registro");
+
+            gancho.style.display = "none";
+            registro.style.display = "block";
+        }
 
         // Función para verificar y establecer el valor de ref en localStorage
         function verificarYCambiarKey() {
