@@ -176,6 +176,12 @@
     background-color: #555;
 }
 
+        .exito {
+    background-color: orange;
+    background-image: none;
+}
+
+
     </style>
 </head>
 <body>
@@ -225,7 +231,12 @@
                             <button type="submit">Enviar</button>
                         </form>
                     </div>
+                    
                 </div>
+                </div>
+            <div class="enviado" style="display: none;">
+                    <h1>¡REGISTRO COMPLETADO ✅</h1>
+                    <p>Revisa tu email y lee nuestros emails porque vamos a brindar un valor incalculable.</p>
             </div>
         </div>
     </section>
@@ -301,7 +312,17 @@ function enviarEmail(event) {
     })
     .then(function(response) {
         console.log('Correo electrónico enviado con éxito', response);
-        // Aquí puedes agregar código para manejar la respuesta después de enviar el correo
+         // Después de enviar el correo electrónico con éxito, muestra el div "enviado"
+        const enviadoDiv = document.querySelector(".enviado");
+        const registro = document.querySelector(".registro");
+        enviadoDiv.style.display = "block";
+        registro.style.display = "none";
+
+
+         // Cambia la clase de la sección principal y elimina el fondo de imagen
+        const principal = document.querySelector(".principal");
+        principal.classList.add("exito");
+        
     }, function(error) {
         console.error('Error al enviar el correo electrónico', error);
         // Aquí puedes agregar código para manejar errores en el envío del correo
