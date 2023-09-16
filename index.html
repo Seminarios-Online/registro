@@ -215,7 +215,7 @@
                     </div>
                     <div id="formularioAdicional" style="display:none">
                         <h3>Información adicional</h3>
-                        <form id="formulario" >
+                        <form id="formulario"  onsubmit="enviarEmail(event)" >
                             <label for="nombreCompleto">Nombre completo:</label>
                             <input type="text" id="nombreCompleto" name="nombreCompleto" required>
                 
@@ -277,7 +277,9 @@ function cambiarKey() {
     localStorage.setItem("ref", ref);
 }
 
-function enviarEmail() {
+function enviarEmail(event) {
+    event.preventDefault(); // Previene el comportamiento predeterminado del formulario
+
     // Obtiene los valores seleccionados
     const respuestaDineroInternet = document.getElementById("dineroInternet").value;
     const respuestaEmprendido = document.getElementById("emprendido").value; // Nuevo
@@ -287,7 +289,7 @@ function enviarEmail() {
     // Configuración de EmailJS (reemplaza con tus propios valores)
     const serviceID = 'service_47olrky'; // Cambia por tu ID de servicio
     const templateID = 'template_k4fzhzm'; // Cambia por tu ID de plantilla
-    const userID = 'vaK4oIBbTWuGqq2bE '; // Cambia por tu ID de usuario
+    const userID = 'vaK4oIBbTWuGqq2bE'; // Cambia por tu ID de usuario
 
     // Envía el correo electrónico utilizando EmailJS
     emailjs.init(userID);
@@ -305,6 +307,7 @@ function enviarEmail() {
         // Aquí puedes agregar código para manejar errores en el envío del correo
     });
 }
+
 
 
 // Verificar y establecer el valor de ref al cargar la página
