@@ -204,7 +204,7 @@
                     <div id="pregunta2" style="display: none;">
                         <h3>¿Has generado ya dinero por internet?</h3>
                         <label for="dineroInternet">Selecciona una opción:</label>
-                        <select id="dineroInternet" name="dineroInternet" onchange="mostrarPregunta()">
+                        <select id="dineroInternet" name="dineroInternet">
                             <option value="nada">Aun nada amigo</option>
                             <option value="poco">Sí, un poco pero ya nada</option>
                             <option value="1000">Sí, + de 1000$</option>
@@ -212,9 +212,9 @@
                             <option value="5000">Sí, + de 5000$</option>
                         </select>
                     </div>
-                    <div id="formularioAdicional" style="display:none">
+                    <div id="formularioAdicional" >
                         <h3>Información adicional</h3>
-                        <form id="formulario">
+                        <form id="formulario" style="display:none">
                             <label for="nombreCompleto">Nombre completo:</label>
                             <input type="text" id="nombreCompleto" name="nombreCompleto" required>
                 
