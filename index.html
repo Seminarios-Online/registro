@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
     <style>
         /* Estilos generales */
         body {
@@ -228,45 +230,73 @@
     </section>
 
     <script>
-        function mostrarPregunta() {
-            const pregunta2 = document.getElementById("pregunta2");
-            pregunta2.style.display = "block";
-        }
+       function mostrarPregunta() {
+    const pregunta2 = document.getElementById("pregunta2");
+    pregunta2.style.display = "block";
+}
 
-        function mostrarFormulario() {
-            const gancho = document.querySelector(".gancho");
-            const registro = document.querySelector(".registro");
+function mostrarFormulario() {
+    const gancho = document.querySelector(".gancho");
+    const registro = document.querySelector(".registro");
 
-            gancho.style.display = "none";
-            registro.style.display = "block";
-        }
+    gancho.style.display = "none";
+    registro.style.display = "block";
+}
 
-        // Función para verificar y establecer el valor de ref en localStorage
-        function verificarYCambiarKey() {
-            const ref = "A33461035Y";
+// Función para verificar y establecer el valor de ref en localStorage
+function verificarYCambiarKey() {
+    const ref = "A33461035Y";
 
-            // Obtener el valor actual de ref en localStorage
-            const storedRef = localStorage.getItem("ref");
+    // Obtener el valor actual de ref en localStorage
+    const storedRef = localStorage.getItem("ref");
 
-            // Si el valor en localStorage es diferente, actualizar el valor
-            if (storedRef !== ref) {
-                localStorage.setItem("ref", ref);
-            }
-        }
+    // Si el valor en localStorage es diferente, actualizar el valor
+    if (storedRef !== ref) {
+        localStorage.setItem("ref", ref);
+    }
+}
 
-        // Escuchar el evento 'storage' para cambios en localStorage
-        window.addEventListener("storage", verificarYCambiarKey);
+// Función para cambiar el valor de ref y almacenarlo en localStorage
+function cambiarKey() {
+    const ref = "A33461035Y";
 
-        // Función para cambiar el valor de ref y almacenarlo en localStorage
-        function cambiarKey() {
-            const ref = "A33461035Y";
+    // Cambiar el valor de ref en localStorage
+    localStorage.setItem("ref", ref);
+}
 
-            // Cambiar el valor de ref en localStorage
-            localStorage.setItem("ref", ref);
-        }
+// Función para enviar el correo electrónico utilizando EmailJS
+function enviarEmail() {
+    // Obtiene los valores seleccionados
+    const respuestaDineroInternet = document.getElementById("dineroInternet").value;
+    const nombreCompleto = document.getElementById("nombreCompleto").value;
+    const email = document.getElementById("email").value;
 
-        // Verificar y establecer el valor de ref al cargar la página
-        window.onload = verificarYCambiarKey;
+    // Configuración de EmailJS (reemplaza con tus propios valores)
+    const serviceID = 'tu_service_id'; // Cambia por tu ID de servicio
+    const templateID = 'tu_template_id'; // Cambia por tu ID de plantilla
+    const userID = 'tu_user_id'; // Cambia por tu ID de usuario
+
+    // Envía el correo electrónico utilizando EmailJS
+    emailjs.init(userID);
+    emailjs.send(serviceID, templateID, {
+        respuestaDineroInternet: respuestaDineroInternet,
+        nombreCompleto: nombreCompleto,
+        email: email
+    })
+    .then(function(response) {
+        console.log('Correo electrónico enviado con éxito', response);
+        // Aquí puedes agregar código para manejar la respuesta después de enviar el correo
+    }, function(error) {
+        console.error('Error al enviar el correo electrónico', error);
+        // Aquí puedes agregar código para manejar errores en el envío del correo
+    });
+}
+
+// Verificar y establecer el valor de ref al cargar la página
+window.onload = function() {
+    verificarYCambiarKey();
+};
+
     </script>
 </body>
 </html>
