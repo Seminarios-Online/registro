@@ -4,109 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seminarios Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <style>
-      /* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
-
-/* Estilos para el formulario de preguntas */
-.preguntas {
-    margin-top: 20px;
-}
-
-.preguntas h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.preguntas select, .preguntas label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* Estilos para los elementos de formulario */
-.preguntas select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.preguntas label {
-    font-size: 16px;
-}
-
-/* Estilos para los botones del formulario */
-.preguntas button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.preguntas button:hover {
-    background-color: #555;
-}
-
-        .logo{
-        width: 250px;
-
+        /* Estilos generales */
+        body {
+            font-family: 'Varela Round', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
         }
 
-.principal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
+        /* Estilos para el formulario de preguntas */
+        .preguntas {
+            margin-top: 20px;
+        }
 
-  </style>
+        .preguntas h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .preguntas select,
+        .preguntas label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para los elementos de formulario */
+        .preguntas select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .preguntas label {
+            font-size: 16px;
+        }
+
+        /* Estilos para los botones del formulario */
+        .preguntas button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .preguntas button:hover {
+            background-color: #555;
+        }
+
+        .logo {
+            width: 250px;
+        }
+
+        .principal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <section class="principal">
-       <div class="box-principal">
-         <img src="logoSO.png" class="logo">
-        <h2>Responde a las siguientes preguntas</h2>
-        <div class="preguntas">
-            <h3>¿Ya has emprendido alguna vez?</h3>
-            <label for="emprendido">Selecciona una opción:</label>
-            <select id="emprendido" name="emprendido" onchange="mostrarPregunta(this)">
-                <option value="seleccionar">Selecciona una opción</option>
-                <option value="si">Sí</option>
-                <option value="no">Aún no</option>
-            </select>
-
-            <div id="pregunta2" style="display: none;">
-                <h3>¿Has generado ya dinero por internet?</h3>
-                <label for="dineroInternet">Selecciona una opción:</label>
-                <select id="dineroInternet" name="dineroInternet">
-                    <option value="nada">Aun nada amigo</option>
-                    <option value="poco">Sí, un poco pero ya nada</option>
-                    <option value="1000">Sí, + de 1000$</option>
-                    <option value="2000">Sí, + de 2000$</option>
-                    <option value="5000">Sí, + de 5000$</option>
+        <div class="box-principal">
+            <img src="logoSO.png" class="logo">
+            <h2>Responde a las siguientes preguntas</h2>
+            <div class="preguntas">
+                <h3>¿Ya has emprendido alguna vez?</h3>
+                <label for="emprendido">Selecciona una opción:</label>
+                <select id="emprendido" name="emprendido" onchange="mostrarPregunta()">
+                    <option value="seleccionar">Selecciona una opción</option>
+                    <option value="si">Sí</option>
+                    <option value="no">Aún no</option>
                 </select>
+
+                <div id="pregunta2" style="display: none;">
+                    <h3>¿Has generado ya dinero por internet?</h3>
+                    <label for="dineroInternet">Selecciona una opción:</label>
+                    <select id="dineroInternet" name="dineroInternet">
+                        <option value="nada">Aun nada amigo</option>
+                        <option value="poco">Sí, un poco pero ya nada</option>
+                        <option value="1000">Sí, + de 1000$</option>
+                        <option value="2000">Sí, + de 2000$</option>
+                        <option value="5000">Sí, + de 5000$</option>
+                    </select>
+                </div>
             </div>
         </div>
-    </div>
     </section>
 
     <script>
-        function mostrarPregunta(selectElement) {
+        function mostrarPregunta() {
             const pregunta2 = document.getElementById("pregunta2");
-            if (selectElement.value === "si") {
-                pregunta2.style.display = "block";
-            } else {
-                pregunta2.style.display = "none";
-            }
+            pregunta2.style.display = "block";
         }
     </script>
 </body>
