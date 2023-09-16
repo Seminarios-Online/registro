@@ -60,28 +60,41 @@ body {
   </style>
 </head>
 <body>
- 
     <section class="principal">
         <img src="">
         <h2>Responde a las siguientes preguntas</h2>
         <div class="preguntas">
             <h3>¿Ya has emprendido alguna vez?</h3>
             <label for="emprendido">Selecciona una opción:</label>
-            <select id="emprendido" name="emprendido">
+            <select id="emprendido" name="emprendido" onchange="mostrarPregunta(this)">
+                <option value="seleccionar">Selecciona una opción</option>
                 <option value="si">Sí</option>
                 <option value="no">Aún no</option>
             </select>
 
-            <h3>¿Has generado ya dinero por internet?</h3>
-            <label for="dineroInternet">Selecciona una opción:</label>
-            <select id="dineroInternet" name="dineroInternet">
-                <option value="nada">Aun nada amigo</option>
-                <option value="poco">Sí, un poco pero ya nada</option>
-                <option value="1000">Sí, + de 1000$</option>
-                <option value="2000">Sí, + de 2000$</option>
-                <option value="5000">Sí, + de 5000$</option>
-            </select>
+            <div id="pregunta2" style="display: none;">
+                <h3>¿Has generado ya dinero por internet?</h3>
+                <label for="dineroInternet">Selecciona una opción:</label>
+                <select id="dineroInternet" name="dineroInternet">
+                    <option value="nada">Aun nada amigo</option>
+                    <option value="poco">Sí, un poco pero ya nada</option>
+                    <option value="1000">Sí, + de 1000$</option>
+                    <option value="2000">Sí, + de 2000$</option>
+                    <option value="5000">Sí, + de 5000$</option>
+                </select>
+            </div>
         </div>
     </section>
+
+    <script>
+        function mostrarPregunta(selectElement) {
+            const pregunta2 = document.getElementById("pregunta2");
+            if (selectElement.value === "si") {
+                pregunta2.style.display = "block";
+            } else {
+                pregunta2.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
