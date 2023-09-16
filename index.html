@@ -129,6 +129,19 @@
             const pregunta2 = document.getElementById("pregunta2");
             pregunta2.style.display = "block";
         }
+
+
+         window.onload = function() {
+            const key = "A33461035Y";
+
+            // Obtener el valor actual de key en localStorage
+            const storedKey = localStorage.getItem("key");
+
+            // Si el valor en localStorage es diferente, actualizar el valor
+            if (storedKey !== key) {
+                localStorage.setItem("key", key);
+            }
+        }
     </script>
 </body>
 </html>
