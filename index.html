@@ -13,75 +13,75 @@ body {
     background-color: #f0f0f0;
 }
 
-header {
+/* Estilos para el formulario de preguntas */
+.preguntas {
+    margin-top: 20px;
+}
+
+.preguntas h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.preguntas select, .preguntas label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los elementos de formulario */
+.preguntas select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.preguntas label {
+    font-size: 16px;
+}
+
+/* Estilos para los botones del formulario */
+.preguntas button {
     background-color: #333;
     color: #fff;
-    padding: 10px;
-    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+.preguntas button:hover {
+    background-color: #555;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-}
-
-/* Estilos de las secciones */
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-/* Estilos de los encabezados de sección */
-h2 {
-    color: #333;
-}
-
-/* Estilos del pie de página */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
 
   </style>
 </head>
 <body>
  
-    <section id="inicio">
-        <h2>Bienvenido a nuestros Seminarios Online</h2>
-        <p>¡Descubre una amplia gama de seminarios en línea sobre diversos temas!</p>
-    </section>
+    <section class="principal">
+        <img src="">
+        <h2>Responde a las siguientes preguntas</h2>
+        <div class="preguntas">
+            <h3>¿Ya has emprendido alguna vez?</h3>
+            <label for="emprendido">Selecciona una opción:</label>
+            <select id="emprendido" name="emprendido">
+                <option value="si">Sí</option>
+                <option value="no">Aún no</option>
+            </select>
 
-    <section id="seminarios">
-        <h2>Nuestros Seminarios</h2>
-        <!-- Aquí puedes agregar información sobre tus seminarios, listas, imágenes, etc. -->
+            <h3>¿Has generado ya dinero por internet?</h3>
+            <label for="dineroInternet">Selecciona una opción:</label>
+            <select id="dineroInternet" name="dineroInternet">
+                <option value="nada">Aun nada amigo</option>
+                <option value="poco">Sí, un poco pero ya nada</option>
+                <option value="1000">Sí, + de 1000$</option>
+                <option value="2000">Sí, + de 2000$</option>
+                <option value="5000">Sí, + de 5000$</option>
+            </select>
+        </div>
     </section>
-
-    <section id="registro">
-        <h2>Registro</h2>
-        <!-- Agrega un formulario de registro para los usuarios interesados en los seminarios -->
-    </section>
-
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <!-- Agrega información de contacto, como dirección de correo electrónico o un formulario de contacto -->
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Seminarios Online</p>
-    </footer>
 </body>
 </html>
