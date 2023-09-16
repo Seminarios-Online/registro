@@ -230,10 +230,15 @@
     </section>
 
     <script>
-       function mostrarPregunta() {
+      function mostrarPregunta() {
     const pregunta2 = document.getElementById("pregunta2");
     pregunta2.style.display = "block";
+    
+    // Mostrar el formulario al seleccionar una opción en pregunta2
+    const formulario = document.getElementById("formulario");
+    formulario.style.display = "block";
 }
+
 
 function mostrarFormulario() {
     const gancho = document.querySelector(".gancho");
