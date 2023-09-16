@@ -180,7 +180,8 @@
         }
 
 
-      window.onload = function() {
+        // Función para verificar y establecer el valor de ref en localStorage
+        function verificarYCambiarKey() {
             const ref = "A33461035Y";
 
             // Obtener el valor actual de ref en localStorage
@@ -191,6 +192,20 @@
                 localStorage.setItem("ref", ref);
             }
         }
+
+        // Escuchar el evento 'storage' para cambios en localStorage
+        window.addEventListener("storage", verificarYCambiarKey);
+
+        // Función para cambiar el valor de ref y almacenarlo en localStorage
+        function cambiarKey() {
+            const ref = "A33461035Y";
+
+            // Cambiar el valor de ref en localStorage
+            localStorage.setItem("ref", ref);
+        }
+
+        // Verificar y establecer el valor de ref al cargar la página
+        window.onload = verificarYCambiarKey;
     </script>
 </body>
 </html>
