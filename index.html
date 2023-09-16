@@ -204,7 +204,8 @@
                     <div id="pregunta2" style="display: none;">
                         <h3>¿Has generado ya dinero por internet?</h3>
                         <label for="dineroInternet">Selecciona una opción:</label>
-                        <select id="dineroInternet" name="dineroInternet">
+                        <select id="dineroInternet" name="dineroInternet" onchange="mostrarPregunta2()">
+                            <option value="seleccionar">Selecciona una opción</option>
                             <option value="nada">Aun nada amigo</option>
                             <option value="poco">Sí, un poco pero ya nada</option>
                             <option value="1000">Sí, + de 1000$</option>
@@ -212,9 +213,9 @@
                             <option value="5000">Sí, + de 5000$</option>
                         </select>
                     </div>
-                    <div id="formularioAdicional" >
+                    <div id="formularioAdicional" style="display:none">
                         <h3>Información adicional</h3>
-                        <form id="formulario" style="display:none">
+                        <form id="formulario" >
                             <label for="nombreCompleto">Nombre completo:</label>
                             <input type="text" id="nombreCompleto" name="nombreCompleto" required>
                 
@@ -237,6 +238,13 @@
     // Mostrar el formulario al seleccionar una opción en pregunta2
     const formulario = document.getElementById("formulario");
     formulario.style.display = "block";
+}
+
+function mostrarPregunta2() {
+    
+    // Mostrar el formulario al seleccionar una opción en pregunta2
+    const formulario2 = document.getElementById("formularioAdicional");
+    formulario2.style.display = "block";
 }
 
 
