@@ -277,22 +277,23 @@ function cambiarKey() {
     localStorage.setItem("ref", ref);
 }
 
-// Función para enviar el correo electrónico utilizando EmailJS
 function enviarEmail() {
     // Obtiene los valores seleccionados
     const respuestaDineroInternet = document.getElementById("dineroInternet").value;
+    const respuestaEmprendido = document.getElementById("emprendido").value; // Nuevo
     const nombreCompleto = document.getElementById("nombreCompleto").value;
     const email = document.getElementById("email").value;
 
     // Configuración de EmailJS (reemplaza con tus propios valores)
-    const serviceID = 'tu_service_id'; // Cambia por tu ID de servicio
-    const templateID = 'tu_template_id'; // Cambia por tu ID de plantilla
-    const userID = 'tu_user_id'; // Cambia por tu ID de usuario
+    const serviceID = 'service_47olrky'; // Cambia por tu ID de servicio
+    const templateID = 'template_k4fzhzm'; // Cambia por tu ID de plantilla
+    const userID = 'vaK4oIBbTWuGqq2bE '; // Cambia por tu ID de usuario
 
     // Envía el correo electrónico utilizando EmailJS
     emailjs.init(userID);
     emailjs.send(serviceID, templateID, {
         respuestaDineroInternet: respuestaDineroInternet,
+        respuestaEmprendido: respuestaEmprendido, // Nuevo
         nombreCompleto: nombreCompleto,
         email: email
     })
@@ -304,6 +305,7 @@ function enviarEmail() {
         // Aquí puedes agregar código para manejar errores en el envío del correo
     });
 }
+
 
 // Verificar y establecer el valor de ref al cargar la página
 window.onload = function() {
